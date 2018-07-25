@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户列表</title>
+</head>
+<body>
+<h1>用户列表</h1>
+<form action="./list" method="GET">
+    姓名：<input type="text" name="realname" id="realname" value="<%=realname%>" size="6" / >
+    工资：
+    <input type="text" name="min" id="min" size="5" value="<%=min%>"> -
+    <input type="text" name="max" id="max" size="5" value="<%=max%>">
+
+    <input type="submit" value="查询">
+</form>
+
+<table border="1" width="800">
+    <tr>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>工资</td>
+    </tr>
+    <% for(let u of userlist){ %>
+    <tr>
+        <td><%=u.id%></td>
+        <td><%=u.name%></td>
+        <td><%=u.salary%></td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
