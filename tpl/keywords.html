@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="zh-CN">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关键词列表</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .H{color: red;}
+    </style>
+</head>
+
+<body>
+<h1>热点关键词。。。</h1>
+<form class="form-inline" action="./" method="GET">
+    <div class="form-group">
+        <label for="keywords">关键词</label>
+        <input type="text" class="form-control" name="keywords" id="keywords" value="<%=keywords%>" placeholder="请输入关键词">
+    </div>
+    <button type="submit" class="btn btn-default">查询</button>
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>关键词</th>
+        <th>分类一</th>
+        <th>分类二</th>
+        <th>分类三</th>
+        <th>操作</th>
+    </tr>
+
+    <%
+    for(let item of kwlist){ %>
+    <tr>
+        <td>
+            <%=item.id%>
+        </td>
+        <td>
+            <%-item.kw.replace(keywords, '<span class="H">'+keywords+'</span>')%>
+        </td>
+        <td>
+            <%=item.c1%>
+        </td>
+        <td>
+            <%=item.c2%>
+        </td>
+        <td>
+            <%=item.c3%>
+        </td>
+        <td><a href="###" class="del" value="<%=item.id%>">删除</a></td>
+    </tr>
+    <% } %>
+
+</table>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js.js"></script>
 </body>
+
 </html>

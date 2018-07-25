@@ -8,7 +8,7 @@ const ejs=require('ejs');
 
 const server=express();
 //设置模板引擎
-server.enjine('html',ejs.renderFile); //定义HTML格式的模板引擎
+server.engine('html',ejs.renderFile); //定义HTML格式的模板引擎
 server.set('view engine','html');//注册模板引擎
 server.set('views','./tpl');//设置视图文件夹
 
