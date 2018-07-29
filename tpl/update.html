@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>关键词列表</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>修改信息。。。</h1>
+<form class="form-inline"  method="POST" action="./update">
+    <input type="hidden" name="id" value="<%=id%>">
+    <div class="form-group">
+        关键词：<input type="text" class="form-control" name="kw" id="kw" value="<%=kw%>" placeholder="请输入关键词">
+        分类一：<input type="text" class="form-control" name="c1" id="c1" value="<%=c1%>" placeholder="请输入分类">
+        分类二：<input type="text" class="form-control" name="c2" id="c2" value="<%=c2%>" placeholder="请输入分类">
+        分类三：<input type="text" class="form-control" name="c3" id="c3" value="<%=c3%>" placeholder="请输入分类">
+    </div>
+    <button type="submit" class="btn btn-default">确定</button>
+</form>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="./js/oper.js"></script> -->
+</body>
+
+</html>
